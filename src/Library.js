@@ -1,5 +1,5 @@
 class Book{
-    constructor(author,title,isbn){
+    constructor(name,author,info,numOf,priceOfLatene,category,isbn){
         this.author=author;
         this.title=title;
         this.isbn=isbn;
@@ -28,10 +28,12 @@ class Book{
 
 class Member{
     borrowedBooks = [];
-    constructor(membershipID,name,borrowedBooks){
+    favoriteBooks = [];
+    constructor(membershipID,name,borrowedBooks,favoriteBooks){
         this.membershipID=membershipID;
         this.name=name;
         this.borrowedBooks=borrowedBooks;
+        this.favoriteBooks=favoriteBooks;
     }
 
     getMembershipID(){
@@ -53,6 +55,16 @@ class Member{
         
     }
 
+}
+class Category{
+    
+}
+
+class Comment{
+    constructor(book,text){
+        this.book=new Book(book)
+        this.text=text
+    }
 }
 
 const library={books: [], addBook(book){
