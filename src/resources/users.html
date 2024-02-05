@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Users - My Library</title>
+
+  <script>
+  
+    fetch('/member', {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          
+        })
+        .then(response => response.json())
+        .then(data => {
+        })
+        .catch(error => console.error('Error:', error));
+  </script>
+</head>
+
+<body>
+  <header>
+    <div class="top-bar">
+      <h1>My Library</h1>
+      <a href="login.html">Login</a>
+    </div>
+  </header>
+
+  <main>
+    <h2>Users</h2>
+
+    <div class="user-card">
+      <h3>User 1</h3>
+      <p><strong>Name:</strong> John Doe</p>
+      <p><strong>Borrowed Books:</strong> Book A, Book B</p>
+      <p><strong>Favorite Books:</strong> Book X, Book Y</p>
+    </div>
+
+    <div class="user-card">
+      <h3>User 2</h3>
+      <p><strong>Name:</strong> Jane Doe</p>
+      <p><strong>Borrowed Books:</strong> Book C, Book D</p>
+      <p><strong>Favorite Books:</strong> Book Z, Book W</p>
+    </div>
+
+
+  </main>
+
+  <footer>
+    <p>&copy; 2024 My Library. All rights reserved.</p>
+  </footer>
+
+  <script src="scripts.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Login - My Library</title>
+</head>
+
+<body>
+  <header>
+    <div class="top-bar">
+      <h1>My Library</h1>
+      <button onclick="goBack()">Back</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="login-form">
+      <h2>Login</h2>
+      <form id="loginForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <button type="submit" id="submitButton" onclick="athorize()">Login</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 My Library. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function athorize() {
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+        if (username === 'admin' && password === '123') {
+            location.assign("addBook.html");
+        } else {
+            alert('Invalid username or password. Please try again.');
+        }
+    }
+    </script>
+ 
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="bookStyle.css">
+  <title>Books - My Library</title>
+<script>
+  
+  fetch('/books', {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        
+      })
+      .then(response => response.json())
+      .then(data => {
+      })
+      .catch(error => console.error('Error:', error));
+</script>
+
+</head>
+
+
+<body>
+  <header>
+    <div class="top-bar">
+      <h1>My Library</h1>
+      <a href="login.html">Login</a>
+    </div>
+  </header>
+
+  <main>
+    <h2>Book List</h2>
+
+    <ul id="book-list">
+  
+      <li>
+        <span class="book-name">Book 1</span>
+        <button class="heart-button">❤️</button>
+        <button class="add-button">Add to Borrow</button>
+      </li>
+      <li>
+        <span class="book-name">Book 2</span>
+        <button class="heart-button">❤️</button>
+        <button class="add-button">Add to Borrow</button>
+      </li>
+
+    </ul>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 My Library. All rights reserved.</p>
+  </footer>
+
+</body>
+
+</html>

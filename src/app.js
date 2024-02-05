@@ -1,8 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 
-const lib = require('./Library');
-
 const app  =express();
 
 app.listen(3000);
@@ -25,7 +23,7 @@ app.post('/login', (req, res) => {
 
   if (user) {
     res.json({ success: true, role: user.role });
-    console.log("sssssssssssssssssss");
+  
   } else {
     res.status(401).json({ success: false, message: 'Invalid credentials' });
   }
@@ -36,6 +34,10 @@ app.post('/addBook', (req,res) => {
   books.push(new Book(req.body.author,req.body.title,req.body.isbn));  
 
 });
+
+app.post('/addMember', (req,res) => {
+  members.push(new Member(req.body.name));
+})
 
 app.delete('/deleteBook', (req,res) => {
   
@@ -64,10 +66,10 @@ app.post('/returnBook' , (req,res) => {
 });
 
 
-app.get('/member/:id', (req,res) => {
+app.get('/member', (req,res) => {
 
   members.forEach((item, index, array) => {
-    if (item.getMembershipID() == req.params.id) {
+    if (item.getName() == req.body.username) {
       res.send(item,item.getBorrowedBooks());
     }
   });

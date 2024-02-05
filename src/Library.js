@@ -36,6 +36,10 @@ class Member{
         this.favoriteBooks=favoriteBooks;
     }
 
+    getName(){
+        return this.name;
+    }
+
     getMembershipID(){
         return this.membershipID;
     }
